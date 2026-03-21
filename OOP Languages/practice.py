@@ -1,5 +1,5 @@
-""" # Runtime
-python "Obj Oriented\pratice.py"
+""" 
+I'm practicing Python. Some stuff I know is below
 """ 
 
 # This is a variable that stores a number and prints it to the console

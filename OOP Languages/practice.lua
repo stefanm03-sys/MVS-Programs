@@ -1,6 +1,5 @@
---[[ -- Runtime
-cd "c:\Users\stefa\codepractice"
-lua "OOP Languages\practice.lua"
+--[[
+I am currently practicing Lua, the stuff I know  is below
 ]]--
 
 print("Hello, World!") -- This is a comment. This line prints "Hello, World!" to the console

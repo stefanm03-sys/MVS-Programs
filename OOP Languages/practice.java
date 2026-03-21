@@ -1,6 +1,5 @@
-/* Runtime
-javac "Obj Oriented\practice.java"
-java -cp "Obj Oriented" practice
+/*
+Java is hard
 */
 
 import java.io.Console;
