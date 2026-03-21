@@ -1,1 +1,30 @@
 /* This is a CSS comment */
+
+html { /* This styles the html element, this brace opens the customization block. It can generally be used for most things like margin or padding */
+    background-color: lightgray; /* This sets the background color to light gray, but you can use any form of color specification */
+    margin: 0 auto; /* This sets the margin to 0 for top and bottom, and auto for left and right, which centers the content automatically */
+} /* This brace closes the customization block for html */
+
+h1 { /* This styles the header 1 element, this brace opens the customization block */
+    color: blue; /* This sets the text color to blue, but you can use any form of color specification */
+    font-size: 24px; /* This sets the font size to 24 pixels, but you can use other units like em or rem for relative sizing, followed by vw */
+    text-align: center; /* This centers the text */
+} /* This brace closes the customization block for h1 */
+
+p { /* This styles the paragraph element */
+    color: green; /* This sets the text color to green */
+    font-size: 16px; /* This sets the font size to 16 pixels */
+    text-align: center; /* This aligns the text to the middle */
+} /* This brace closes the customization block for p */
+
+#p2 { /* This styles the element with the id "p2". Use a hash before p to indicate an id */
+    color: red; /* This sets the text color to red */
+    font-size: 18px; /* This sets the font size to 18 pixels */
+    text-align: center; /* This aligns the text to the center */
+} /* This brace closes the customization block for #p2 */
+
+.p3 { /* This styles the elements with the class "p3". Use a period before p to indicate a class */
+    color: rgb(255, 255, 0); /* This sets the text color to purple */
+    font-size: 14px; /* This sets the font size to 14 pixels */
+    text-align: center; /* This centers the text */
+} /* This brace closes the customization block for .p3 */

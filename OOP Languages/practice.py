@@ -1,6 +1,6 @@
 """ # Runtime
 python "Obj Oriented\pratice.py"
-""" # This is a multi-line comment. The code in the triple quotes is ignored
+""" 
 
 # This is a variable that stores a number and prints it to the console
 num = input("Enter a number: ") # num is the variable. input() is the user input to be accepted
