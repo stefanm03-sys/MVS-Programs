@@ -1,7 +1,7 @@
 --[[ -- Runtime
 cd "c:\Users\stefa\codepractice"
 lua "Obj Oriented\practice.lua"
-]]-- This is a multi-line comment. The code between the brackets is not executed.
+]]-- This is a multi-line comment. The code between the brackets is not executed
 
 print("Hello, World!") -- This is a comment. This line prints "Hello, World!" to the console
 
