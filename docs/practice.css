@@ -1,0 +1,77 @@
+/* This is a CSS comment */
+
+html {
+    /* This styles the html element, this brace opens the customization block. It can generally be used for most things like margin or padding */
+    background-color: rgb(170, 170, 170);
+    /* This sets the background color to light gray, but you can use any form of color specification */
+}
+
+/* This brace closes the customization block for html */
+
+h1 {
+    /* This styles the header 1 element, this brace opens the customization block */
+    color: blue;
+    /* This sets the text color to blue, but you can use any form of color specification */
+    font-size: 24px;
+    /* This sets the font size to 24 pixels, but you can use other units like em or rem for relative sizing, followed by vw */
+    text-align: center;
+    /* This centers the text */
+}
+
+/* This brace closes the customization block for h1 */
+
+p {
+    /* This styles the paragraph element */
+    color: green;
+    /* This sets the text color to green */
+    font-size: 16px;
+    /* This sets the font size to 16 pixels */
+    text-align: center;
+    /* This aligns the text to the middle */
+}
+
+/* This brace closes the customization block for p */
+
+#p2 {
+    /* This styles the element with the id "p2". Use a hash before p to indicate an id */
+    color: red;
+    /* This sets the text color to red */
+    font-size: 18px;
+    /* This sets the font size to 18 pixels */
+    text-align: center;
+    /* This aligns the text to the center */
+}
+
+/* This brace closes the customization block for #p2 */
+
+.p3 {
+    /* This styles the elements with the class "p3". Use a period before p to indicate a class */
+    color: rgb(255, 255, 0);
+    /* This sets the text color to purple */
+    font-size: 14px;
+    /* This sets the font size to 14 pixels */
+    text-align: center;
+    /* This centers the text */
+}
+
+/* This brace closes the customization block for .p3 */
+
+#btn1 {
+    background-color: rgb(124, 186, 203);
+    /* This sets the background color of the button to orange */
+    color: white;
+    /* This sets the text color of the button to white */
+    font-size: 16px;
+    /* This sets the font size of the button text to 16 pixels */
+    padding: 10px 20px;
+    /* This adds padding inside the button, with 10 pixels on top and bottom, and 20 pixels on left and right */
+    border: none;
+    /* This removes the default border from the button */
+    border-radius: 5px;
+    /* This adds rounded corners to the button with a radius of 5 pixels */
+    cursor: pointer;
+    /* This changes the cursor to a pointer when hovering over the button */
+    display: block; /* This makes the button a block-level element, allowing it to take up the full width of its container */
+    margin: 0 auto; /* This centers the button horizontally by setting the left and right margins to auto */
+
+}
