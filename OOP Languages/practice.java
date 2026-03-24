@@ -1,7 +1,7 @@
-/* Runtime
-javac "Obj Oriented\practice.java"
-java -cp "Obj Oriented" practice
-*/ // This is a multiline comment. The code between /* */ is not executed
+/*
+This is a multi line comment in Java
+*/
+// This is a comment in Java
 
 import java.io.Console;
 

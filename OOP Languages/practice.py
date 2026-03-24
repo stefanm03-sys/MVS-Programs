@@ -1,10 +1,15 @@
-""" # Runtime
-python "Obj Oriented\pratice.py"
-""" # This is a multi-line comment. The code in the triple quotes is ignored
+"""
+This is a multi line Python comment
+"""
+# This is a Python comment
 
 # This is a variable that stores a number and prints it to the console
 num = input("Enter a number: ") # num is the variable. input() is the user input to be accepted
 num = int(num) # int() converts the input to an integer
+"""
+str() converts something to a string
+int() converts something to an integer
+"""
 print("The number you entered is: " + str(num)) # This prints the variable. str() converts the number back to a string for concatenation with a + sign
 
 for i in range(5): # This is a loop that will run 5 times. i is the variable that will take on the values from 0 to 5

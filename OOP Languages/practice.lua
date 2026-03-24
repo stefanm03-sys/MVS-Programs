@@ -1,14 +1,16 @@
---[[ -- Runtime
-cd "c:\Users\stefa\codepractice"
-lua "Obj Oriented\practice.lua"
-]]-- This is a multi-line comment. The code between the brackets is not executed
+--[[
+This is a multi line Lua comment
+]]--
+-- This is a comment in Lua
 
 print("Hello, World!") -- This is a comment. This line prints "Hello, World!" to the console
 
 var = 10 -- This line assigns the value 10 to the variable 'var'
 print(var) -- This line prints the value of 'var' to the console
 
-for i = 1, 5 do -- This line starts a numeric loop that will iterate from 1 to 5. i is a placeholder variable that takes on the value of each iteration
+local number = 2 + 2 -- This does a math operation for the value of 'number'. local defines something used in a shorter context window rather then being accessed globally
+
+for i = 1, 5 do -- This line starts a numeric loop that will iterate from 1 to 5. i is a local placeholder variable that takes on the value of each iteration
     print("Iteration: " .. i) -- This line prints the current iteration number
 end -- This marks the end of a block of code, such as a loop or function
 
@@ -20,13 +22,13 @@ end -- This marks the end of the loop block
 function printValues(number)
     tonumber(number) -- This line converts the input 'number' to a numeric type, if it is not already
     for i = 0, number do -- This line starts a numeric loop that will iterate from 0 to the value of 'number'
-        print(i) -- This line prints the current value of i during each iteration
+        print("Iteration: ", i) -- This line prints the current value of i during each iteration
     end -- This marks the end of the loop block
 end -- This marks the end of the function block
 
 printValues(4) -- This line calls the function 'printValues' with the argument 4, which will print the numbers from 0 to 4 to the console
 
-io.write("Enter a number: ") -- This line prompts the user to enter a number
+io.write("Enter a number: ") -- This line prompts the user to enter a number, but can be what you choose
 input = io.read() -- This line reads the user's input and stores it in the variable 'input'
 num = {0, 1, 2, 3, 4, 5} -- This line creates a table with the values 0 through 5
 for i, v in ipairs(num) do -- This line starts a generic loop that iterates over the elements of the 'num' table
