@@ -34,8 +34,8 @@
     {
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "Chrome: practice.html",
-      "url": "file://${workspaceFolder}/Web Design/practice.html",
+      "name": "Chrome: docs/index.html",
+      "url": "file://${workspaceFolder}/docs/index.html",
       "webRoot": "${workspaceFolder}"
     }
   ]

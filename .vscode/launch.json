@@ -1,7 +1,42 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": []
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lua",
+      "request": "launch",
+      "name": "Lua: Active File",
+      "program": "${file}"
+    },
+    {
+      "type": "python",
+      "request": "launch",
+      "name": "Python: Active File",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Java: Active File",
+      "mainClass": "${fileBasenameNoExtension}",
+      "cwd": "${fileDirname}",
+      "classPaths": [
+        "${fileDirname}"
+      ]
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Node: Active JS File",
+      "program": "${file}",
+      "cwd": "${fileDirname}"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Chrome: docs/index.html",
+      "url": "file://${workspaceFolder}/docs/index.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
 }
