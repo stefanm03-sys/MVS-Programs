@@ -13,8 +13,8 @@ public class practice { // This is a class named "practice"
         void means it does not return any value
         String[] args is an array of strings that can be used to pass command-line arguments
         */
-        char a = 'a'; // Declares a variable with a single character
-        double b = 5.5; // This line declares a variable named b and assigns it the value of 5.5
+        char a = 'a'; // Declares a variable with a single character. Uses single quotes
+        double b = 5.5; // This line declares a variable named b and assigns it a decimal
         int c = 3; // Assigns a number to c
         boolean d = true; // Puts a boolean value in d
         System.out.println(b); // This line prints the value of b (5.5) to the console

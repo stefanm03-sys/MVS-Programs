@@ -54,8 +54,8 @@ list[0] = true; // Updates the list
 list[1] = false;
 list[2] = NaN;
 
-list.sort(); // Alphabetically
-list.sort((a, b) => a - b); // Numerically (It does not do anything here, has no numeric values)
+list.sort(); // Alphabetically sort
+list.sort((a, b) => a - b); // Numerically sort (using numbers in the list. If there are no numbers do not use this sort method)
 list.reverse(); // Reverse current list order
 
 let table = [null] 
