@@ -3,8 +3,8 @@
 
 int main(void) { /*
     main() is the entry point of a C program
-    int is..
-    void is..
+    int is the return type of main
+    void means main takes no arguments
     */
     // A minimal C example
     printf("Hello, C!\n"); // Prints out "Hello, C!" with a line break (\n)

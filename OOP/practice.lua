@@ -36,7 +36,7 @@ end -- This marks the end of the loop block
 ]]--
 
 function printValues(number)
-    tonumber(number) -- This line converts the input 'number' to a numeric type, if it is not already
+    number = tonumber(number) -- This line converts the input 'number' to a numeric type, if it is not already
     for i = 0, number do -- This line starts a numeric loop that will iterate from 0 to the value of 'number'
         print(i) -- This line prints the current value of i during each iteration
     end -- This marks the end of the loop block
@@ -49,7 +49,7 @@ io.write("Enter a number: ") -- This line prompts the user to enter a number
 input = io.read() -- This line reads the user's input and stores it in the variable 'input'
 num = {0, 1, 2, 3, 4, 5} -- This line creates a table with the values 0 through 5
 for i, v in ipairs(num) do -- This line starts a generic loop that iterates over the elements of the 'num' table
-    rand = math.random(1, #num) -- This line prints the current element of the 'num' table during each iteration
+    rand = math.random(1, #num) -- This line picks a random index for the 'num' table during each iteration
     print("Possible Number:", num[rand]) -- This line prints each element of the 'num' table as a possible number
     break -- This forcefully exits the loop after the first iteration, so only the first chosen element of the 'num' table will be printed
 end

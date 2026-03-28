@@ -1,7 +1,7 @@
 // This is a C Sharp comment
 using System; // Imports namespace
 
-var a = 1; // var declares any variable. The semi colon is required for nearly all statements, or errors will be present
+var a = 1; // var lets the compiler infer the variable type. The semi colon is required for nearly all statements, or errors will be present
 var b = "2"; // This var has a string
 var c = 3.0; // This var has a float (decimal value)
 var d = true; // This var has a boolean value
@@ -11,7 +11,7 @@ Console.WriteLine(b); // Prints b
 // These declare specific data
 int e = 2; // Declares an integer
 double f = 10.4; // Declares a decimal
-char g = "S"; // Stores a string, but only one character (letter, num, etc)
+char g = 'S'; // Stores a string, but only one character (letter, num, etc)
 string h = "Sup?"; // Stores a full string
 bool i = true; // Declares the only two boolean values
 
@@ -25,10 +25,10 @@ Console.WriteLine(k % j); // Returns the remaining value of division instead of 
 
 /* 
 placeholder -> {0}
-This (the {0}) is an 'index placeholder', essentially a regular placeholder value. This will return an error however and should not be used with variables
+This (the {0}) is an 'index placeholder' used to insert variables into a formatted string
 */
 
-var l = "world"; // This assigns e with "world"
+var l = "world"; // This assigns l with "world"
 Console.WriteLine("Hello {0}!", l); // This replaces the value of {0} with l. You can add more variables sequentially with commas
 
 //
@@ -54,18 +54,18 @@ for (var i = 0; i < 10; i++)  /*
  i++ increments the value of i, i-- decrements it
  */
 {
-   Console.WriteLine("Current index value:", i); 
+   Console.WriteLine($"Current index value: {i}"); 
 }
 
 var m = 5;
 var n = 3;
 while (m > n) // While loops iterate if the condition is true for the loop
 {
-    Console.WriteLine("Incrementing n..", n);
+    Console.WriteLine($"Incrementing n.. {n}");
     int v = n++; // Uses a local variable v to increment the value of n using n++
     if (n > 5)
     {
-        Console.WriteLine("n exceeded value of m! n is:", n);
+        Console.WriteLine($"n exceeded value of m! n is: {n}");
         break;
     }
 } 
@@ -74,15 +74,15 @@ while (m > n) // While loops iterate if the condition is true for the loop
 
 /* 
 Classes are normally what you should use for programs in C Sharp
-Programs as simple as Console.WriteLine() will require a class to run, but I separated them both
-When making apps and games, programs are required
+Top-level statements can run without a class, but classes are still common
+When making apps and games, classes are required
 */
 class MyProgram // Creates a class named "MyProgram"
 {
-    static void main() /*
+    static void Main() /*
     static indicates that a method belongs to a class instead of objects
     void indicates the method returns no value
-    main() is the main entry point of the program
+    Main() is the main entry point of the program
     */
     {
         Console.WriteLine("Hello program!");
@@ -93,10 +93,10 @@ class MyProgram // Creates a class named "MyProgram"
             int defines the data type to use
             From there, you make a function like the example above with your parameters
             */
-            Console.WriteLine("Product Of Values:", a * b);
+            Console.WriteLine($"Product Of Values: {a * b}");
+            return a * b;
         } 
         Multiply(1, 2); // Calls your function
         
     }
 }
-

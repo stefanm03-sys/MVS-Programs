@@ -3,7 +3,6 @@
 #include <iostream>
 int main() {
     // This line prints "Hello, World!" to the console
-    std::cout << "Hello, World!" << // What..?
-    std::endl; // I have no idea but endl is end line
+    std::cout << "Hello, World!" << std::endl; // std::endl writes a newline and flushes the stream
     return 0;
 }

@@ -13,16 +13,16 @@ public class practice { // This is a class named "practice"
         void means it does not return any value
         String[] args is an array of strings that can be used to pass command-line arguments
         */
-        char a = "a"; // Declares a variable with a single character
-        double b = 5.5; // This line declares a variable named num1 to be doubled and assigns it the value of 5.5
+        char a = 'a'; // Declares a variable with a single character
+        double b = 5.5; // This line declares a variable named b and assigns it the value of 5.5
         int c = 3; // Assigns a number to c
-        bool d = true; // Puts a boolean value in d
+        boolean d = true; // Puts a boolean value in d
         System.out.println(b); // This line prints the value of b (5.5) to the console
 
         System.out.println("Hello, World!"); // This line prints "Hello, World!" to the console. System.out is a standard output stream, and println is a method that prints the specified string followed by a new line
-        while (true) { // This is an infinite loop that will run indefinitely
+        while (true) { // This is an infinite loop unless it is broken out of
             System.out.println("This will be printed forever."); // This line prints "This will be printed forever." to the console
-            break; // This line breaks out of the loop, so the loop will only run once
+            break; // This line breaks out of the loop, so the loop will only run once instead of forever like the string claims
         }
 
         //
@@ -31,7 +31,9 @@ public class practice { // This is a class named "practice"
         System.out.println("You entered: " + input); // This line prints the string entered by the user to the console
         
         Console console = System.console(); // This line creates a Console object named 'console' that can be used to read input from the console
-        console.readLine("Enter a string: "); // This is the generic way to read inputs, the program waits for the user to press Enter before closing the console window
+        if (console != null) {
+            console.readLine("Enter a string: "); // This is the generic way to read inputs, the program waits for the user to press Enter before closing the console window
+        }
 
         if (4 > 2) { // A generic if statement that checks if 4 is greater than 2, which is true
             System.out.println("4 is greater than 2."); // Prints "4 is greater than 2." to the console if the condition is true
@@ -40,8 +42,6 @@ public class practice { // This is a class named "practice"
         }
     }
 }
-
-
 
 
 

@@ -47,7 +47,7 @@ p {
 .p3 {
     /* This styles the elements with the class "p3". Use a period before p to indicate a class */
     color: rgb(255, 255, 0);
-    /* This sets the text color to purple */
+    /* This sets the text color to yellow */
     font-size: 2rem;
     /* This sets the font size to 2 rem, which is root from the html */
     text-align: center;
@@ -58,7 +58,7 @@ p {
 
 #btn1 {
     background-color: rgb(124, 186, 203);
-    /* This sets the background color of the button to orange */
+    /* This sets the background color of the button to light blue */
     color: white;
     /* This sets the text color of the button to white */
     font-size: 14px;

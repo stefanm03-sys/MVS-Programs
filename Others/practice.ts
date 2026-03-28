@@ -3,7 +3,7 @@
 This is a multi line comment in TS
 */
 
-// Typescript is Javascript with error handling and extended capability
+// TypeScript is JavaScript with static typing and extra tooling
 
 let e = 2; // A simple way to define a variable that can be changed. The semicolon (;) indicates an individual statement
 const d = 3; // A way to define a consistent variable (wont change)
@@ -24,15 +24,8 @@ function addNum(a: number, b: number) {
 addNum(5, 16)
 
 function compare(a: string, b: string) {
-    let binA = [];
-    let binB = [];
-    binA.push(a)
-    binB.push(b)
-    while (true) {
-        console.log("this will be edited")
-    }
-    if (binA == binB) {
-        console.log("Found a match! ${a) matches ${b} in comparison.");
+    if (a === b) {
+        console.log(`Found a match! ${a} matches ${b} in comparison.`);
     } else {
         console.log("No matches found! Returned null or is considered false.")
     }
