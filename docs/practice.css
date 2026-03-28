@@ -24,8 +24,8 @@ p {
     /* This styles the paragraph element */
     color: green;
     /* This sets the text color to green */
-    font-size: 16vw;
-    /* This sets the font size to 16 vw (viewport width) */
+    font-size: 8vw;
+    /* This sets the font size to 8 vw (viewport width) */
     text-align: center;
     /* This aligns the text to the middle */
 }
@@ -36,7 +36,7 @@ p {
     /* This styles the element with the id "p2". Use a hash before p to indicate an id */
     color: red;
     /* This sets the text color to red */
-    font-size: 6em;
+    font-size: 3em;
     /* This doubles the size of the font based on it's default size */
     text-align: center;
     /* This aligns the text to the center */
@@ -48,8 +48,8 @@ p {
     /* This styles the elements with the class "p3". Use a period before p to indicate a class */
     color: rgb(255, 255, 0);
     /* This sets the text color to purple */
-    font-size: 10rem;
-    /* This sets the font size to 14 rem, which is root from the html */
+    font-size: 2rem;
+    /* This sets the font size to 2 rem, which is root from the html */
     text-align: center;
     /* This centers the text */
 }
@@ -72,5 +72,4 @@ p {
     /* This changes the cursor to a pointer when hovering over the button */
     display: block; /* This makes the button a block-level element, allowing it to take up the full width of its container */
     margin: 0 auto; /* This centers the button horizontally by setting the left and right margins to auto */
-
 }

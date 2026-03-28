@@ -48,6 +48,30 @@ else // Does not compare anything, this should be used if you want code to run w
 
 // 
 
+for (var i = 0; i < 10; i++)  /*
+ This loop requires i to have a beginning value (ex. 0)
+ It requires a condition, such as i < 10 to end it automatically
+ i++ increments the value of i, i-- decrements it
+ */
+{
+   Console.WriteLine("Current index value:", i); 
+}
+
+var m = 5;
+var n = 3;
+while (m > n) // While loops iterate if the condition is true for the loop
+{
+    Console.WriteLine("Incrementing n..", n);
+    int v = n++; // Uses a local variable v to increment the value of n using n++
+    if (n > 5)
+    {
+        Console.WriteLine("n exceeded value of m! n is:", n);
+        break;
+    }
+} 
+
+//
+
 /* 
 Classes are normally what you should use for programs in C Sharp
 Programs as simple as Console.WriteLine() will require a class to run, but I separated them both
@@ -67,13 +91,12 @@ class MyProgram // Creates a class named "MyProgram"
             /*
             static here defines a function
             int defines the data type to use
-            From there, you make a function like the example above
+            From there, you make a function like the example above with your parameters
             */
             Console.WriteLine("Product Of Values:", a * b);
         } 
-        Multiply(1, 2); // Calls function
-
-
+        Multiply(1, 2); // Calls your function
+        
     }
 }
 

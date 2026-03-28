@@ -7,23 +7,23 @@ import java.io.Console;
 import javax.swing.JOptionPane;
 
 public class practice { // This is a class named "practice"
-    public static void main(String[] args) { // This is the main method, which is the entry point of the  program
-        // public means it can be accessed from anywhere, static means it belongs to the
-        // class rather than an instance, void means it does not return any value,
-        // and String[] args is an array of strings that can be used to pass
-        // command-line arguments
+    public static void main(String[] args) { // This is the main method, which is the entry point of the program
+        /* public means it can be accessed from anywhere
+        static means it belongs to the class rather than an instance
+        void means it does not return any value
+        String[] args is an array of strings that can be used to pass command-line arguments
+        */
+        char a = "a"; // Declares a variable with a single character
+        double b = 5.5; // This line declares a variable named num1 to be doubled and assigns it the value of 5.5
+        int c = 3; // Assigns a number to c
+        bool d = true; // Puts a boolean value in d
+        System.out.println(b); // This line prints the value of b (5.5) to the console
 
-        //
-
-        System.out.println("Hello, World!"); // This line prints "Hello, World!" to the console. System.out is a
-        // standard output stream, and println is a method that prints the
-        // specified string followed by a new line
+        System.out.println("Hello, World!"); // This line prints "Hello, World!" to the console. System.out is a standard output stream, and println is a method that prints the specified string followed by a new line
         while (true) { // This is an infinite loop that will run indefinitely
             System.out.println("This will be printed forever."); // This line prints "This will be printed forever." to the console
             break; // This line breaks out of the loop, so the loop will only run once
         }
-        double num1 = 5.5; // This line declares a variable named num1 to be doubled and assigns it the value of 5.5
-        System.out.println(num1); // This line prints the value of num1 (5.5) to the console
 
         //
 
