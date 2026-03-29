@@ -1,7 +1,7 @@
 // This is a F# comment
 /*
 This should be a multi line comment
-*/
+
 
 let name = "World" // Declares a variable
 printfn "Hello, %s!" name // This prints a line using "printfn" and avoiding parantheses
@@ -16,6 +16,6 @@ printfn "Evens: %A" evens
 let describe n = // This defines a variable with conditions, not exactly a function but it can be used as one. It takes a number n and returns a string describing whether it is positive, zero, or negative
     if n > 0 then "positive" // If n is greater than 0, it returns "positive"
     elif n = 0 then "zero" // If n is equal to 0, return "zero"
-    else "negative" // Checks if the value of is not greater or equal, and prints "negative"
+    else "negative" // Checks if the value of n is not greater or equal, and prints "negative"
 
 printfn "-5 is %s" (describe -5) // This..
