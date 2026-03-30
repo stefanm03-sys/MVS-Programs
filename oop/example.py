@@ -52,3 +52,64 @@ class variables: # creates a class with the name variables
         "Initializes instance attributes from name and value."
         self.name = name # This assigns the name parameter to the instance variable self.name
         self.value = value # This assigns the value parameter to the instance variable self.value
+
+# Polymorphism example
+class Animal: # Base class
+    def speak(self): # A class method meant to be overridden
+        return "Insert sound here"
+
+class Dog(Animal): # Dog inherits from Animal, used as a subclass
+    def speak(self): # Calls the method
+        return "Woof!" # Overrides the return result
+
+class Cat(Animal): # Cat also inherits from Animal, will also be a subclass
+    def speak(self):
+        return "Meow!"
+
+# Using the polymorphic behavior
+animals = [Dog(), Cat(), Animal()] # A list of different Animal types, the item() examples of polymorphisim
+for creature in animals: # Loop over each animal in said list
+    print(creature.speak()) # Calls the version of speak defined on that specific class 
+
+#
+
+from enum import Enum # Imports enum, which are basically consist variables
+
+class AccessLevel(Enum): # Simple enum example
+    GUEST = 0
+    USER = 1
+    ADMIN = 2
+
+print(AccessLevel.GUEST) # Print the class and said value
+print(AccessLevel.USER.value) # Print the numeric value assigned 
+print(AccessLevel.USER.name) # Print the variable name
+
+#
+
+import asyncio # Imports async for timed events
+
+async def fetch_message(): # Async coroutine definition
+    await asyncio.sleep(0.2) # Simulated delay if used
+    return "Async hello!"
+
+#
+
+def safe_divide(a, b): # Defines a function with error handling
+    try: # Executes as normal
+        return a / b # Divide this
+    except ZeroDivisionError as exc: # Catch divide-by-zero # If an error with a zero division ocurrs, the except block prints the error
+        print(f"Caught error: {exc}") # Uses f"str: {exc}" to return a console output
+        return None
+
+#
+
+def main(): # Define a main entry point 
+    print("Enum sample:", AccessLevel.ADMIN) # Print the AccessLevel class
+    print("Divide result:", safe_divide(10, 2)) # Try the said parameters in division
+    print("Divide by zero:", safe_divide(5, 0)) # Try the said parameters, will return the except block
+    # Run async coroutine, will fetch a method using asyncio.run(yourmethod())
+    message = asyncio.run(fetch_message())
+    print(message) # Prints the result of the method
+
+if __name__ == "__main__": # Entry point guard # Unsure 
+    main()

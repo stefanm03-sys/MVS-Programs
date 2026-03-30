@@ -77,3 +77,82 @@ elseif guess ~= cpu then
     print("You guessed incorrectly!")
     print("Console returned:", cpu)
 end
+
+--
+
+local Animal = {} -- A basic class using curly braces
+Animal.__index = Animal -- Defines an index
+
+function Animal:new(name) -- Constructor
+    local obj = { name = name or "unknown" } -- Declares that the object defined has a value or "unknown" value
+    setmetatable(obj, self) -- Inherit methods for the object
+    return obj
+end
+
+function Animal:speak() -- A method meant to be overridden using a class
+    print(self.name .. " makes a sound.") -- self.objvalue uses the name of the said object from the main class
+end
+
+local Dog = setmetatable({}, { __index = Animal }) -- Dog is a subclass of Animal using {}, _index = animal
+Dog.__index = Dog -- Adds it to the class
+
+function Dog:new(name) -- Creates a function for the dog class with the original method
+    local obj = Animal.new(self, name or "Dog") -- Call parent constructor and return the obj from the original class
+    return obj
+end
+
+function Dog:speak() -- Overriding class
+    print(self.name .. " says: Woof!")
+end
+
+local Cat = setmetatable({}, { __index = Animal }) -- Cat is also a subclass of the main class Animal
+Cat.__index = Cat
+
+function Cat:new(name)
+    local obj = Animal.new(self, name or "Cat")
+    return obj
+end
+
+function Cat:speak() -- Override
+    print(self.name .. " says: Meow!")
+end
+
+local zoo = { Dog:new("Fido"), Cat:new("Luna"), Animal:new("Creature") } -- I have no idea whats happening here
+for _, animal in ipairs(zoo) do -- Polymorphic call here
+    animal:speak() -- Call the method
+end
+
+--
+
+local AccessLevel = { guest = 0, user = 1, admin = 2 } 
+print("Enum-like admin value:", AccessLevel.admin) -- Print the value of the enum using Definition.value (how I understand it)
+
+-- 
+
+local function fetch_message() -- Async function routine
+    coroutine.yield("Pausing for effect...") -- The yield method simulates an awaiting 
+    return "Coroutine resume: hello!"
+end
+
+local co = coroutine.create(fetch_message) -- First await
+local ok, pauseMsg = coroutine.resume(co) - Second await
+print(pauseMsg) -- First await
+local ok2, finalMsg = coroutine.resume(co) -- Second resume, gets return value
+print(finalMsg) -- Second await
+
+
+local function risky_divide(a, b) -- A function to detect when an error is gounf
+    return a / b -- Test the given values
+end
+
+local ok3, result = pcall(risky_divide, 10, 0) -- This will error the function
+if not ok3 then
+    print("Caught error:", result) -- Prints the result
+end
+
+
+local function main() -- Creates a main() method
+    print("Lua demo complete.")
+end
+
+main() -- Entry point call

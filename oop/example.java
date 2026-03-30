@@ -1,10 +1,12 @@
 // This ia a Java comment
 /*
 This is a multi line comment
+Java is part of the C Languages due to similar syntax but is not a C specified language (file ext is .java instead of .c or .cpp)
 */
 
 import java.io.Console;
 import javax.swing.JOptionPane;
+import java.util.concurrent.CompletableFuture; // For async-style demo
 
 public class practice { // This is a class named "practice"
     public static void main(String[] args) { // This is the main method, which is the entry point of the program
@@ -35,14 +37,80 @@ public class practice { // This is a class named "practice"
             console.readLine("Enter a string: "); // This is the generic way to read inputs, the program waits for the user to press Enter before closing the console window
         }
 
-        if (4 > 2) { // A generic if statement that checks if 4 is greater than 2, which is true
+        if (4 > 2) { // A generic condition that checks if 4 is greater than 2, which is true
             System.out.println("4 is greater than 2."); // Prints "4 is greater than 2." to the console if the condition is true
         } else { // This is the else block that will execute if the condition in the if statement is false
             System.out.println("4 is not greater than 2."); // Prints "4 is not greater than 2." to the console if the condition is false
         }
+
+        // This is inheritance and polymorphism
+        Animal[] zoo = { new Dog(), new Cat(), new Animal() }; // Array of base-class type items. Basically, it contains the parent constructors for usage
+        for (Animal pet : zoo) { // Loop through each animal in the class
+            pet.speak(); // Calls the overridden version on each object through another method
+        }
+
+        // Enum demo
+        Day today = Day.MONDAY; // Access an enum value
+        System.out.println("Today is: " + today);
+
+        
+        try { // Tries to find errors
+            int ok = Integer.parseInt("42"); // Parses correctly
+            int fail = Integer.parseInt("not-a-number"); // Throws NumberFormatException
+            System.out.println(ok + fail); // Won't run
+        } catch (NumberFormatException ex) { // Catches the specific exception
+            System.out.println("Caught bad input: " + ex.getMessage());
+        } finally { // Always runs
+            System.out.println("Finished parsing attempt.");
+        }
+
+        // Static top-level style function call
+        System.out.println(greet("developer"));
+
+        // Simple async-style example with CompletableFuture (non-blocking)
+        CompletableFuture<String> future = fetchMessageAsync(); // Starts async work
+        future.thenAccept(msg -> System.out.println("Async message: " + msg)); // Callback
+        future.join(); // Wait so the sample finishes before exit
+    }
+
+    // Top-level style static greet 
+    public static String greet(String name) { // Use greet("name") to call this
+        return "Hello, " + name;
+    }
+
+    // Async helper
+    private static CompletableFuture<String> fetchMessageAsync() {
+        return CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(200); // Simulated delay
+            } catch (InterruptedException ignored) {}
+            return "Future completed!";
+        });
+    }
+}
+
+// Basic inheritance and polymorphism example
+class Animal { // New class named Animal
+    public void speak() { // Method that can be overridden and called in your code
+        System.out.println("Some generic animal sound ig");
+    }
+}
+
+class Dog extends Animal { // This creates a subclass named Dog derived from Animal
+    @Override // This calls an override process
+    public void speak() { // Overrides the existing speak method
+        System.out.println("Dog bark!");
+    }
+}
+
+class Cat extends Animal { // Cat is also a subclass
+    @Override
+    public void speak() {
+        System.out.println("Cat meow!");
     }
 }
 
 
-
-
+enum Day { // This enum holds values, but they may not have any assignments
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
+}

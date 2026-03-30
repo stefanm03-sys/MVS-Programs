@@ -27,8 +27,13 @@ class MyProgram // Creates a class named "MyProgram"
             return a * b;
         } 
         Multiply(1, 2); // Calls your function
-        
-        
+
+        // Polymorphism demo using Animal base class
+        Animal[] zoo = { new Dog(), new Cat(), new Animal() };
+        foreach (var creature in zoo)
+        {
+            creature.Speak(); // Calls the overridden Speak on each
+        }
     }
 }
 
@@ -38,8 +43,32 @@ public class Greeter
     public void Greet(string name)
     {
         Console.WriteLine("Hello user! Should I call you by sonething?");
-        var name = console.ReadLine("Your Name: ");
-        Console.WriteLine($"Ah, hello {name}!");
+        var enteredName = Console.ReadLine();
+        Console.WriteLine($"Ah, hello {enteredName}!");
     }
 }
 
+// Inheritance and polymorphism example
+public class Animal
+{
+    public virtual void Speak() // virtual so children can override
+    {
+        Console.WriteLine("Some generic animal sound.");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void Speak() // Overrides base behavior
+    {
+        Console.WriteLine("Dog says: Woof!");
+    }
+}
+
+public class Cat : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Cat says: Meow!");
+    }
+}

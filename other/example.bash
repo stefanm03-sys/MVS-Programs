@@ -15,7 +15,7 @@ echo "$a" # Prints the value of a
 echo "$b" # Prints the value of b
 echo a # Prints a (literally, not variable value)
 echo "$a + $b" # This substitutes $a and $b, placeholders, with the actual variables 
-echo $((a + b)) # Math operation using variables; $ indicates the value of the variables should be used
+echo a and b returned $((a + b)) # Math operation using variables; $ indicates the value of the variables should be used
 
 read -p "Enter a string: " str # This reads a line from the user using "read". -p shows a prompt
 echo "You entered: $str"
@@ -33,15 +33,15 @@ calc() { # A simple calculator function
     b=$3 # Second value as the third argument
     echo "Calculating.."
     if [ "$op" = "*" ]; then # Checks the operator passed in
-        echo $((a * b)) # Math is done using double parentheses and echo prints the result
+        echo Returned: $((a * b)) # Math is done using double parentheses and echo prints the result
     elif [ "$op" = "/" ]; then
-        echo $((a / b))
+        echo Returned: $((a / b))
     elif [ "$op" = "+" ]; then
-        echo $((a + b))
+        echo Returned: $((a + b))
     elif [ "$op" = "-" ]; then
-        echo $((a - b))
+        echo Returned: $((a - b))
     elif [ "$op" = "%" ]; then
-        echo $((a % b))
+        echo Returned: $((a % b))
     else
         echo "Unknown operator or invalid input: $op" # Handles invalid input
     fi
@@ -49,7 +49,7 @@ calc() { # A simple calculator function
 
 calc "*" 5 2 # This calls the function with the parameters
 
-: <<'EXAMPLES' # This is a example block, not meant to execute to avoid system issues
+: <<'EXAMPLES' # This is a example block, not meant to execute. This is here to avoid system issues
 Below are commands for running CLI programs using shell commands.
 These -(flags) and --(long flags) modify the commands and are generally the same for each bash command, but some are unique.
 
@@ -108,8 +108,10 @@ ls -lt # Sorts files by modification date
 ls -S # Sort files by size
 ls -r # Reverse list order
 ls -d */ # Lists the directories in the current one
+ls -lhS # List largest files first with human-readable sizes
+ls -ltr # List oldest files last (reverse time sort)
 
-npm # Node Package Manager for JS/TS projects.
+npm # Node Package Manager for JS/TS projects. It can also install external programs, libraries, and packages for other languages
 npm init # Creates a package.json file for projects
 npm install -g <package> # The -g installs the package globally instead of just the current project
 npm ls # List installed packages
@@ -140,6 +142,7 @@ tar -xvf archive.tar # Extract said archive
 tar -czvf archive.tar.gz #dir # Create a gzipped archive
 tar -xzvf archive.tar.gz # Extract a gz archive
 tar -cvf archive.tar #file1 #file2 OR dir # Create specified archive from files or directories
+tar -tf archive.tar # List contents of an archive without extracting
 
 zip / unzip # Basic compress and decompress
 
@@ -166,10 +169,13 @@ bg %1 # Resume suspended job 1 in the background
 fg %1 # Bring job 1 to the foreground
 
 kill %1 # Stop a job by its job number (or use kill <PID>)
+kill -9 <PID> # Forcefully terminate a process (use wisely)
 
 nohup command & # Keep a command running after closing the terminal
+nohup command >/dev/null 2>&1 & # Run detached and silence output
 
-ps -ef | grep pattern # Find matching processes (portable flags)
+ps -ef | grep pattern # Find matching processes (portable flags). Simply replace 'pattern' with what process you want to find
+ps -eo pid,cmd,%cpu,%mem --sort=-%cpu | head # Top CPU consumers
 
 pgrep pattern # Find PIDs matching a pattern
 
@@ -185,40 +191,49 @@ curl https://example.com
 # Fetch the content from s page
 curl -I https://example.com # Fetch only headers
 curl -O https://example.com/file.zip # Download a file
-
 wget https://example.com/file.zip # Alternative downloader
+curl -L -o out.zip https://example.com/file.zip # Follow redirects and save as out.zip
+
+wget -c https://example.com/file.zip # Continue an interrupted download
 
 traceroute example.com # Trace network hops (may need sudo/install)
 
-dig example.com # DNS lookup (use nslookup if dig absent)
+dig example.com # DNS lookup to find IP address (use nslookup if dig absent)
+dig +short example.com # Brief DNS answer
 
 ip addr show # Show network interfaces (ifconfig on older systems)
 
 ss -tuln # List listening sockets (netstat -tuln on older systems)
+ss -tp # Show TCP connections with processes
 
 ssh -p 22 user@host # Remote shell (custom port with -p)
 
 scp -P 22 file user@host:/path # Copy file to remote host (custom port with -P)
+scp -r project/ user@host:/path # Copy a directory recursively
 
 uname -a # Kernel and system information
 
 lsb_release -a # Distro info (Debian/Ubuntu-based; else use cat /etc/os-release)
 
 df -h # Disk free in human units
+df -hT # Disk free with filesystem types
 
 du -sh . # Size of current directory
+du -sh * # Sizes of items in current dir
 
 free -h # Memory usage
+free -m # Memory usage in MB
 
 uptime # How long the system has been running
 
-env | less # Print environment variables
+env | less # Print environment variables 
+# less is used to list the output variables one page at a time
 
 which bash # Show path to an executable
 
 date # Current date/time
 
-history | tail # Recent shell history
+history | tail # Recent command history
 
 find /var/log -name "*.log" # Find log files by pattern
 EXAMPLES

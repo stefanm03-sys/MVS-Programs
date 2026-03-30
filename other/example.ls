@@ -1,9 +1,9 @@
 ; This is a Scheme comment
 
-(define name "World")
-(display "Hello, ")
-(display name)
-(newline)
+(define name "World") ; This defines the variable 'name' with the value "World"
+(display "Hello, ") ; This prints "Hello"
+(display name) ; This prints the 'name' variable
+(newline) ; This moves to a new line
 
 (define (add a b)
   (+ a b))
