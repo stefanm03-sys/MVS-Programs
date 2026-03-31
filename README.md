@@ -13,16 +13,13 @@ This works in only like, a few languages.
 """
 
 Common Comment Examples
+
 // This can be a comment.
-<!-- Or this! !-->
 -- This is a comment too! 
 
 --[[ 
     This is also a comment.
 ]]-- (or) ]]
-<!--
-    This is as well! (I think this is a code block in the .md file)
-!-->
 /* 
     This, however, is a comment.
 */
