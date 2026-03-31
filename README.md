@@ -15,14 +15,11 @@ This works in only like, a few languages.
 Common Comment Examples
 
 // This can be a comment.
+
 -- This is a comment too! 
 
---[[ 
-    This is also a comment.
-]]-- (or) ]]
-/* 
-    This, however, is a comment.
-*/
+--[[ This is a comment. ]]--
+/* This, however, is a comment. */
 
 
 
