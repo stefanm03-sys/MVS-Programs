@@ -83,7 +83,7 @@ class User { // Creates a class named "user"
     }
 }
 
-abstract class Shape { // abstract class cannot be instantiated  directly
+abstract class Shape { // abstract class cannot be instantiated directly
     double area(); // abstract method that must be overridden by another
     @override
     String toString() => "Shape (abstract)"; // toString comes from the Object class method
