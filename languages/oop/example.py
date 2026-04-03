@@ -122,9 +122,100 @@ if __name__ == "__main__": # Entry point guard for the continuing commands
 # This point on is server and OS functions
 # ---
 
+"""
 import pathlib # Enable file exploring
-import http.server # Allow servers
+from pathlib import Path # Import a certain module from an imported library
+import http.server # Import servers
 import socketserver
+
+
+# --
+# pathlib Module
+# Commented out to avoid issues
+# --
+
+p = Path("folder/subfolder/file.pdf")
+print(p) # Print out the path of said directory
+
+cwd = Path.cwd()
+print(cwd) # Print the current working directory
+
+home = Path.home()
+print(home) # Print the home directory
+
+p = Path("folder") / "subfolder" / "img.jpeg" # Assign a path using slashes for strings
+print(p)
+
+p.exists() # Checks that the path exists, determines it
+p.is_file() # Get the file type
+p.is_dir() # Get the directory
+
+print(p.name) # Print file name
+print(p.stem) # Print the file name w/o extension
+print(p.suffix) # Print extension w/o file name
+print(p.parent) # Print directory parent
+print(p.parents) # Print all parents
+print(p.parts) # Print each parent folder
+
+p.resolve() # Get the absolute path
+
+Path("data").mkdir() # Make a directory with a name
+Path("data/logs/2024").mkdir(parents=True, exist_ok=True) # Create a directory with it's parents, returns no error if they exist
+
+Path("snake.txt").touch() # Create a file with a name and extension
+
+p = Path("snake.txt")
+p.write_text("Hello Python!") # Write inside of a file
+
+content = p.read_text() # Read the file contents
+print(content) # Print out the contents
+
+with p.open("a") as f: # Manually open a file
+    f.write("\nMore text")
+
+    
+for directory in Path(".").iterdir(): # Iterate through a directory
+    print(directory)
+files = [f for f in Path(".").iterdir() if f.is_file()] # Iterate through files instead
+
+for f in Path(".").glob("*.txt"): # Find specified files with the extension
+    print(f) 
+for f in Path(".").rglob("*.py"): # Recursive searching
+    print(f)
+
+Path("og.txt").rename("new.txt") # Rename something
+Path("new.txt").rename("folder/new.txt") # Move the file to a new directory
+Path("new.txt").unlink() # Delete something
+Path("folder").rmdir() # Delete a directory, but only if it is empty
+
+# --
+# PurePath Module
+# --
+
+from pathlib import PurePath
+
+p = PurePath("C:/Users/You/Documents")
+print(p) # Print out a directory using PurePath
+
+project = Path(".") # Get a directory 
+py_files = list(project.rglob("*.py")) # List out each file with said extension
+for f in Path("data").iterdir(): # Read out the files in a directory
+    if f.is_file():
+        print(f.read_text())
+
+
+from datetime import datetime 
+# Edited soon
+
+logs = Path("logs") 
+logs.mkdir(exist_ok=True)
+
+logfile = logs / f"{datetime.now():%Y-%m-%d}.txt"
+logfile.write_text("Log started.")
+
+# --
+# Extras
+# --
 
 def write_demo_file(path="demo.txt"): # Write a file using a function
     pathlib.Path(path).write_text("Hello from Python file I/O!\n") # Writes the file using the path
@@ -142,12 +233,14 @@ def run_simple_server(port=8000): # Define a function to start a server
 
 # write_demo_file(); print(read_demo_file())  # These are examples, and have been commented out to avoid side effects
 # run_simple_server()  # Starts an HTTP server serving current directory
+"""
 
-# ---
-# This is a lexer, tokenizer, interpreter
-# expr -> NUMBER (('+'|'-') NUMBER)*
-# Tokens are these NUMBER, PLUS, MINUS strings
-# ---
+
+"""
+This is a lexer, tokenizer, interpreter
+expr -> NUMBER (('+'|'-') NUMBER)*
+Tokens are these NUMBER, PLUS, MINUS strings
+"""
 
 from typing import List, Tuple, Union
 # Import these

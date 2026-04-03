@@ -1,7 +1,11 @@
 @echo off
+:: Disable printing from showing
 setlocal enabledelayedexpansion
 :: Call upon a set of instructions to enable
 
+
+:: This is a batch (windows) comment
+:: Batch only works on Windows devices
 
 set "a=5"
 :: Assigns a variable
@@ -66,7 +70,7 @@ timeout /t 2 >nul
 :: Pause for 2 seconds
 
 pause
-:: This stops the program, but it waits for any keyboard input to continue. 
+:: This stops the program, but it waits for any keyboard input to continue
 
 echo Backing up this script
 copy "%~f0" "%~dp0example_backup.bat" >nul

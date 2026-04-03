@@ -156,3 +156,58 @@ local function main() -- Creates a main() method
 end
 
 main() -- Entry point call
+
+-- #
+-- The code below is OS and server functions
+-- #
+
+--[[
+
+-- #
+-- io Module
+-- #
+
+local io = require("io")
+
+-- The characters inside the paramaters indicate the process
+local file = io.open("data.txt", "r")   -- Read a file
+local file = io.open("data.txt", "w")   -- Overwrite a file
+local file = io.open("data.txt", "a")   -- Append a file
+
+local f = io.open("data.txt", "r") -- Read a file and store it locally
+local content = f:read("*all")   -- Read a file entirely and store it locally
+f:close() -- Close out the file
+print(content) -- Print out the content
+
+for line in io.lines("data.txt") do -- Read the lines of a file, if theres any
+    print(line)
+end
+
+local f = io.open("notes.txt", "w") -- Get the file
+f:write("Hello from Lua!\n") -- Use :write() to write into the file
+f:close() -- Use :close() to exit the file
+
+f:read("*line") -- Read one line
+f:read("*n") -- Read a number
+f:read(5) -- Read 5 characters
+
+
+-- #
+-- OS Module
+-- #
+local os = require("os")
+
+
+os.execute("mkdir folder") -- Run your OS terminal, be wary of these
+
+print(os.time()) -- Print the time as of now
+print(os.date()) -- Print the date of today
+print(os.date("%Y-%m-%d")) -- Print date using a format
+
+os.rename("old.txt", "new.txt") -- Rename a file
+os.remove("this.pdf") -- Delete a file
+
+
+
+
+]]
