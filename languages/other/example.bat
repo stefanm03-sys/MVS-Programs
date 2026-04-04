@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 :: Call upon a set of instructions to enable
 
 
-:: This is a batch (windows) comment
+:: This is a batch (Windows Only) comment
 :: Batch only works on Windows devices
 
 set "a=5"
@@ -109,6 +109,56 @@ goto menu
 :end
 :: Marks the end of the menu
 echo Done
+
+:: The code below are primarily OS functions for Windows
+
+mkdir examplefolder 
+:: Make a directory
+mkdir folderexample
+rmdir examplefolder
+:: Delete a directory
+
+cd folderexample
+:: Change the directory
+cd 
+:: List the directory
+
+copy notes.txt backup\notes.txt
+:: Copy a file
+move notes.txt C:\folderexample\
+:: Move a file
+rename notes.txt newname.txt
+:: Rename a file
+del oldfile.txt
+:: Delete a file
+
+if exist data.txt echo Found the file!
+:: Find a file using a condition and exist
+if exist C:\Games echo Foind the folder!
+:: Find a directory using exist in a condition
+
+start python.exe
+:: Open a program using the executable
+call python.exe
+:: Run a program and wait for it to finish
+
+:: shutdown /s -> Shut off your device
+:: shutdown /r -> Restart your device
+:: shutdown /l -> Log out
+
+:: tasklist -> Show active tasks
+:: tasklist /im thisfile.exe -> End a task
+:: tasklist /pid 1234 /f -> Forcr end a task with the id
+
+:: net user -> List the users on the device
+:: net user Person /add -> Add a new user
+:: net localgroup admins Person /add -> Give a user admin control
+
+:: echo %USERNAME% -> Print your account name
+:: echo %USERPROFILE% -> Print YOUR user foldrr path
+:: echo %APPDATA% -> Print the directory for AppData, where data id usually stored
+:: echo %TEMP% -> Print the directory for temporary files
+
 endlocal
 :: End locally
 exit /b

@@ -10,7 +10,8 @@ import java.util.concurrent.CompletableFuture; // For async-style demo
 
 public class practice { // This is a class named "practice"
     public static void main(String[] args) { // This is the main method, which is the entry point of the program
-        /* public means it can be accessed from anywhere
+        /* 
+        public means it can be accessed from anywhere
         static means it belongs to the class rather than an instance
         void means it does not return any value
         String[] args is an array of strings that can be used to pass command-line arguments

@@ -51,7 +51,7 @@ public class Greeter
 // Inheritance and polymorphism example
 public class Animal
 {
-    public virtual void Speak() // virtual so children can override
+    public virtual void Speak() // Virtuals can be replaced
     {
         Console.WriteLine("Some generic animal sound.");
     }

@@ -271,13 +271,13 @@ def tokenize(src: str) -> List[Token]: # Get the tokenizer from the import, and 
             i += 1
             continue
         raise ValueError(f"Unexpected character: {ch}") # Return an error if found
-    return tokens # Return the current tokend
+    return tokens # Return the current tokens
 
 # Parsing
 def eval_expr(tokens: List[Token]) -> int:
     index = 0 # This is hard to explain, but the function will evaluate the tokens and convert them using a parser and interpreter
 
-    def expect_number() -> int: # This expects a numbrr
+    def expect_number() -> int: # This expects a number
         nonlocal index
         if index >= len(tokens) or tokens[index][0] != "NUMBER": # Use the tokens to find numbers
             raise ValueError("Expected a number") # Raise an error
@@ -316,6 +316,5 @@ def interpret(src: str) -> Union[int, str]: # Evaluate the tokens and return the
     except Exception as exc: # Error handling for bad input
         return f"Error: {exc}" 
 
-# Examples
 # print(interpret("1 + 2 - 3"))
 # print(interpret("10 + x"))  # Will return an error
