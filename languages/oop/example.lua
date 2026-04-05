@@ -117,7 +117,7 @@ function Cat:speak() -- Override
     print(self.name .. " says: Meow!")
 end
 
-local zoo = { Dog:new("Fido"), Cat:new("Luna"), Animal:new("Creature") } -- I have no idea whats happening here
+local zoo = { Dog:new("Fido"), Cat:new("Luna"), Animal:new("Creature") } -- Call the class and dedicate the subclass as a "new" creature (string name)
 for _, animal in ipairs(zoo) do -- Polymorphic call here
     animal:speak() -- Call the method
 end

@@ -1,7 +1,7 @@
 # This is an R comment
 
 a = 2 + 3 # Addition, return sum
-b = 9 * 10 # R is like a Graphimg Calculator but with more stuff. This returns the product
+b = 9 * 10 # R is like a Graphing Calculator but with more stuff. This returns the product
 c = 5^2 # Square (multiply by self twice)
 d <- 8 %% 2 # Returns remainder of these (if called)
 e <- 10 / 5 # Returns quotient (if called)

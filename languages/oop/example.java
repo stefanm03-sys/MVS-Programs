@@ -1,12 +1,12 @@
 // This ia a Java comment
 /*
 This is a multi line comment
-Java is part of the C Languages due to similar syntax but is not a C specified language (file ext is .java instead of .c or .cpp)
+Java is part of the C Languages due to various factors but is does not use .c or .cpp as file ext, uses .java, .jar, etc
 */
 
-import java.io.Console;
-import javax.swing.JOptionPane;
-import java.util.concurrent.CompletableFuture; // For async-style demo
+import java.io.Console; // Standard io library
+import javax.swing.JOptionPane; // Something
+import java.util.concurrent.CompletableFuture; // For async-style
 
 public class practice { // This is a class named "practice"
     public static void main(String[] args) { // This is the main method, which is the entry point of the program

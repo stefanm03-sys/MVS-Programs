@@ -83,6 +83,16 @@ class User { // Creates a class named "user"
     }
 }
 
+void main() { // Calls a basic main method for a process
+    var h = null;
+    h.ask(); // Calls the method from your class
+
+    var i = User("youruser", 10.0) // Assigns values using a class
+    h.intro()
+}
+
+//
+
 abstract class Shape { // abstract class cannot be instantiated directly
     double area(); // abstract method that must be overridden by another
     @override
@@ -128,10 +138,3 @@ class Circle extends Shape with Logger implements Describable { // extends Shape
     String describe() => "Circle of radius $radius"; // Describes from the Describad method
 }
 
-void main() { // Calls a basic main method for a process
-    var h = null;
-    h.ask(); // Calls the method from your class
-
-    var i = User("youruser", 10.0) // Assigns values using a class
-    h.intro()
-}

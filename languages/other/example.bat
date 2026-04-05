@@ -3,6 +3,8 @@
 setlocal enabledelayedexpansion
 :: Call upon a set of instructions to enable
 
+if /i "%~1"=="--check" set "SKIP_INTERACTIVE=1"
+
 
 :: This is a batch (Windows Only) comment
 :: Batch only works on Windows devices
@@ -19,10 +21,12 @@ echo Hello Windows!
 echo Value is %c%
 :: Substitutions for dynamic variables and such require %example% 
 
-set /p "String=Enter a string: "
-:: Read a line from the console
-echo You typed: %String%
-:: Return it
+if not defined SKIP_INTERACTIVE (
+    set /p "String=Enter a string: "
+    :: Read a line from the console
+    echo You typed: %String%
+    :: Return it
+)
 
 ::
 
@@ -65,46 +69,50 @@ echo Example of running a program (disabled):
 echo start "" notepad.exe
 :: If this was a real executable file, this would run
 
-echo Pausing for 2 seconds
-timeout /t 2 >nul
-:: Pause for 2 seconds
+if not defined SKIP_INTERACTIVE (
+    echo Pausing for 2 seconds
+    timeout /t 2 >nul
+    :: Pause for 2 seconds
 
-pause
-:: This stops the program, but it waits for any keyboard input to continue
+    pause
+    :: This stops the program, but it waits for any keyboard input to continue
+)
 
 echo Backing up this script
 copy "%~f0" "%~dp0example_backup.bat" >nul
 :: This will backup your script in the same folder. Here, it is just using an example
 
-:menu
-:: Creates a set of options to choose from
-cls
-echo 1) Say hello
-:: Echo hello
-echo 2) Cleanup temp files
-:: Execute a cleanup
-echo 3) Exit
-:: Exit the menu
-set /p "choice=Select: "
-:: Start the selection
+if not defined SKIP_INTERACTIVE (
+    :menu
+    :: Creates a set of options to choose from
+    cls
+    echo 1) Say hello
+    :: Echo hello
+    echo 2) Cleanup temp files
+    :: Execute a cleanup
+    echo 3) Exit
+    :: Exit the menu
+    set /p "choice=Select: "
+    :: Start the selection
 
-if "%choice%"=="1" (
-    echo Hey!
-    timeout /t 1 >nul
-    :: Delay
+    if "%choice%"=="1" (
+        echo Hey!
+        timeout /t 1 >nul
+        :: Delay
+        goto menu
+        :: Return
+    )
+    if "%choice%"=="2" (
+        echo del /q "%TEMP%\\*"
+        :: Delete temporary files. This is only an example, and is printed instead of executed
+        echo rmdir /s /q "%TEMP%\\old"
+        :: Delete temporary directories. Also an example and is being printed
+        timeout /t 1 >nul
+        goto menu
+    )
+    if "%choice%"=="3" goto end
     goto menu
-    :: Return
 )
-if "%choice%"=="2" (
-    echo del /q "%TEMP%\\*"
-    :: Delete temporary files. This is only an example, and is printed instead of executed
-    echo rmdir /s /q "%TEMP%\\old"
-    :: Delete temporary directories. Also an example and is being printed
-    timeout /t 1 >nul
-    goto menu
-)
-if "%choice%"=="3" goto end
-goto menu
 
 :end
 :: Marks the end of the menu
@@ -123,13 +131,13 @@ cd folderexample
 cd 
 :: List the directory
 
-copy notes.txt backup\notes.txt
+if exist notes.txt copy notes.txt backup\notes.txt
 :: Copy a file
-move notes.txt C:\folderexample\
+if exist notes.txt move notes.txt C:\folderexample\
 :: Move a file
-rename notes.txt newname.txt
+if exist notes.txt rename notes.txt newname.txt
 :: Rename a file
-del oldfile.txt
+if exist oldfile.txt del oldfile.txt
 :: Delete a file
 
 if exist data.txt echo Found the file!
@@ -137,9 +145,9 @@ if exist data.txt echo Found the file!
 if exist C:\Games echo Foind the folder!
 :: Find a directory using exist in a condition
 
-start python.exe
+where python >nul 2>&1 && start python.exe
 :: Open a program using the executable
-call python.exe
+where python >nul 2>&1 && call python.exe
 :: Run a program and wait for it to finish
 
 :: shutdown /s -> Shut off your device

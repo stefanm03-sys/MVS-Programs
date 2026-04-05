@@ -203,10 +203,6 @@ for f in Path("data").iterdir(): # Read out the files in a directory
     if f.is_file():
         print(f.read_text())
 
-
-from datetime import datetime 
-# Edited soon
-
 logs = Path("logs") 
 logs.mkdir(exist_ok=True)
 
@@ -308,7 +304,7 @@ def eval_expr(tokens: List[Token]) -> int:
         raise ValueError("Unexpected input at end")
     return result
 
-# Interpreting
+# Interpreting the source
 def interpret(src: str) -> Union[int, str]: # Evaluate the tokens and return them
     try:
         toks = tokenize(src) # Get the tokens
