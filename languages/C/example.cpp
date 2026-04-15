@@ -19,7 +19,7 @@ int modulus(int a, int b) { // Define a simple division function that returns re
 
 int main() { // Define a main method inside the program. int means the program returns numerics values if it runs or fails
     // This line prints "Hello, World!" to the console
-    std::cout << "Hello, World!" << std::endl; // std::endl writes a newline and flushes the stream
+    std::cout << "Hello, World!" << std::endl; // std::endl writes a new line
 
     //
 

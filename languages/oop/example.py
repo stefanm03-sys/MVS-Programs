@@ -56,6 +56,20 @@ class variables: # creates a class with the name variables
         "Initializes instance attributes from name and value."
         self.name = name # This assigns the name parameter to the instance variable self.name
         self.value = value # This assigns the value parameter to the instance variable self.value
+    
+    def assign(self):
+        self.name = str(input("String: "))
+        self.value = float(input("Numeric value: "))
+        while self.name == None or self.value == None:
+            print("Uh oh! Provide input!")
+            self.name = str(input("String: "))
+            self.value = float(input("Number: "))
+            if self.name != None and self.name != None:
+                print("Stored!")
+                break
+            else:
+                continue
+
 
 # Polymorphism example
 class Animal: # Base class

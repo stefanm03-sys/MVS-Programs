@@ -60,6 +60,6 @@ class Credentials # Classes in Ruby are much simpler and easy to use
 
 end
 
-e = Credentials.new("person", "pass") # Make a new assignment derived of the main class
+e = Credentials.new("person", "pass") # Make a new assignment derived of the main class and its parameters
 puts e.signup # Call the method from a class on a specific variable using puts
 print(e)

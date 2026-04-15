@@ -3,7 +3,7 @@
 # This is a bash (shell) comment
 : <<'COMMENT'
 This is a multi line comment.
-Using a here-doc like this acts as a no-op, so it is safe to leave in scripts.
+Using a comment like this acts as a non usable part of your code
 COMMENT
 
 # bash is for Command Line Interfaces, and CLI languages can be rather complex. bash itself is not as complex as others
@@ -47,7 +47,7 @@ calc() { # A simple calculator function
     fi
 }
 
-calc "*" 5 2 # This calls the function with the parameters
+calc "*" 5 2 # This calls the function with the parameters. Functions are not called using parentheses
 
 #
 
@@ -62,23 +62,24 @@ done # Mark it as complete
 
 
 : <<'EXAMPLES' # This is a example block, not meant to execute. This is here to avoid system issues
+
 Below are commands for running CLI programs using shell commands.
 These -(flags) and --(long flags) modify the commands and are generally the same for each bash command, but some are unique.
 
 #program -v # Common way to print the version of a package or program
 
 cd #file
-# Replace '#file' with your file or folder path to navigate to it. cd is Change Directory. 
-cd C:/EXAMPLE/EXAMPLE/LOCATIONEXAMPLE
+# Replace '#file' with your file or folder path to navigate to it. cd is Change Directory
+cd C:/foldera/folderb/file.txt
 
 pwd 
-# Prints your current directory. pwd is Print Working Directory.
+# Prints your current directory. pwd is Print Working Directory
 
 mkdir new_directory
 # Makes a new directory.
 mkdir -p dir/subdir # Make a main and sub directory
 mkdir -v dir # Print a message after creating the directory
-mkdir -m 755 dir # Set permissions for the directory. 755 allows read, write, and execute
+mkdir -m 755 dir # Set permissions for the directory. 755 allows read, write, and execute. Scroll down to find the other numeric permission values
 
 rmdir new_directory
 # Removes a directory, very similar to mkdir
@@ -115,7 +116,7 @@ wc -lwm # Count all of the above (not longest line)
 
 ls # Lists the files in the current directory
 ls -l # Lists files with more details
-ls -a # Lists files with hidden ones
+ls -a # Lists files with hidden files
 ls -la # Lists files with more details and hidden files
 ls -R # Lists files recursively
 ls -lh # Lists files with detail and readable file size
@@ -126,7 +127,7 @@ ls -d */ # Lists the directories in the current one
 ls -lhS # List largest files first with human-readable sizes
 ls -ltr # List oldest files last (reverse time sort)
 
-npm # Node Package Manager for JS/TS projects. It can also install external programs, libraries, and packages for other languages
+npm # Node Package Manager for Node/TSC projects. It can also install external programs, libraries, and packages for other languages using package.json
 npm init # Creates a package.json file for projects
 npm install -g <package> # The -g installs the package globally instead of just the current project
 npm ls # List installed packages
@@ -151,7 +152,7 @@ cp -v #file1 #file2 # Print a message after copying
 mv src dest # Move source to a location
 # Same flags as cp but for moving instead of duplicating
 
-tar # Compress and extract files
+tar #file # Compress and extract files
 tar -cvf archive.tar #dir # Create a tar archive from a directory
 tar -xvf archive.tar # Extract said archive
 tar -czvf archive.tar.gz #dir # Create a gzipped archive
@@ -159,11 +160,11 @@ tar -xzvf archive.tar.gz # Extract a gz archive
 tar -cvf archive.tar #file1 #file2 OR dir # Create specified archive from files or directories
 tar -tf archive.tar # List contents of an archive without extracting
 
-zip / unzip # Basic compress and decompress
+zip / unzip #item # Basic compress and decompress
 
-gzip / gunzip # Compress and decompress single files, not directories
+gzip / gunzip #file # Compress and decompress single files, not directories
 
-chmod # Change permissions of files and directories
+chmod #file # Change permissions of files and directories
 chmod 755 # read, write, execute for owner / read and execute for others
 chmod 644 # read, write for owner / read for others
 chmod 700 # read, write, execute for owner / no permissions for others
@@ -200,7 +201,7 @@ top # Interactive process viewer (press q to quit)
 
 htop # Nicer top with colors (if installed)
 
-ping -c 4 example.com # Test connectivity with 4 packets
+ping -c 4 example.com # Test connectivity with packets
 
 curl https://example.com 
 # Fetch the content from s page

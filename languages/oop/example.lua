@@ -172,14 +172,14 @@ local io = require("io")
 -- The characters inside the paramaters indicate the process
 local file = io.open("data.txt", "r")   -- Read a file
 local file = io.open("data.txt", "w")   -- Overwrite a file
-local file = io.open("data.txt", "a")   -- Append a file
+local file = io.open("data.txt", "a")   -- Append a file, or simply add to it
 
 local f = io.open("data.txt", "r") -- Read a file and store it locally
 local content = f:read("*all")   -- Read a file entirely and store it locally
 f:close() -- Close out the file
 print(content) -- Print out the content
 
-for line in io.lines("data.txt") do -- Read the lines of a file, if theres any
+for line in io.lines("data.txt") do -- Read the lines of a file, if there is any
     print(line)
 end
 
@@ -197,8 +197,7 @@ f:read(5) -- Read 5 characters
 -- #
 local os = require("os")
 
-
-os.execute("mkdir folder") -- Run your OS terminal, be wary of these
+os.execute("mkdir folder") -- This runs in your built in OS terminal, be wary of these
 
 print(os.time()) -- Print the time as of now
 print(os.date()) -- Print the date of today
@@ -206,8 +205,6 @@ print(os.date("%Y-%m-%d")) -- Print date using a format
 
 os.rename("old.txt", "new.txt") -- Rename a file
 os.remove("this.pdf") -- Delete a file
-
-
 
 
 ]]
