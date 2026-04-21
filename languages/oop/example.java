@@ -87,6 +87,34 @@ public class practice { // This is a class named "practice"
             } catch (InterruptedException ignored) {}
             return "Future completed!";
         });
+        
+        /*
+         Other Stuff
+         
+         // Servers
+         
+         ServerSocket server = new ServerSocket(5000); // Make a socket object on the port
+         
+         Socket client = server.accept(); // Accept connections
+         System.out.println("Connected!")
+         
+         InputStream in = client.getInputStream(); // Get a stream that data can be
+         read in
+         OutputStream out = client.getOutputStream(); // Same concept, but writes data
+         
+         BufferedReader reader = new BufferedReader( // Read the stream in Bytes so it can be used
+         new InputStreamReader(in) // Get the new StreamReader
+         );
+         
+         String message = reader.readLine(); // Read the stream after
+         
+         PrintWriter writer = new PrintWriter(out, true); // Write bytes to the console
+         writer.println("Java!"); // Write something
+         
+         client.close();
+         serv.close();
+         // Close server or client
+         */
     }
 }
 

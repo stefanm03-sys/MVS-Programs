@@ -206,5 +206,30 @@ print(os.date("%Y-%m-%d")) -- Print date using a format
 os.rename("old.txt", "new.txt") -- Rename a file
 os.remove("this.pdf") -- Delete a file
 
+-- #
+-- Servers
+-- #
+
+local socket = require("socket") -- Import a server library
+
+local server = assert(socket.bind("*", 8080)) -- Create a server using a port and any network interface (*) in assert()
+print("Lua server using 8080") -- Print something related
+
+while true do
+    local client = server:accept() -- Accept connections
+    client:send("This is my server") -- Send something from the client to anyone on said server
+    client:close() -- Close the client
+end
+
+local serv = socket.bind("local host", 5000) -- Create a server using a host and a port in .bind()
+local client = server:accept() -- Allow connections
+
+local data = client:recieve() -- Recieve client data
+client:send("You suck") -- Send something from the client
+
+client:close() -- Close the client
+serv:close() -- Close the socket object
+
+
 
 ]]

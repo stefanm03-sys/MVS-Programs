@@ -132,6 +132,7 @@ def main(): # Define a main entry point
 if __name__ == "__main__": # Entry point guard for the continuing commands
     main()
 
+
 # ---
 # This point on is server and OS functions
 # ---
@@ -139,8 +140,8 @@ if __name__ == "__main__": # Entry point guard for the continuing commands
 """
 import pathlib # Enable file exploring
 from pathlib import Path # Import a certain module from an imported library
-import http.server # Import servers
-import socketserver
+import http.server # Import a library for servers
+import socket # Import built in library for servers
 
 
 # --
@@ -223,6 +224,33 @@ logs.mkdir(exist_ok=True)
 logfile = logs / f"{datetime.now():%Y-%m-%d}.txt"
 logfile.write_text("Log started.")
 
+# -- 
+# Server (socket)
+# --
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) -- Assign a server to an object using a variable and socket (server library)
+server.bind(("0.0.0.0", 8080)) -- Make a server using a port and 0.0.0.0 (customize the numbers, all zeros accept any network interface)
+server.listen(1) -- Wait for connections
+
+print("Py on port 8080")
+
+while True:
+    client, addr = server.accept() -- Similar to Lua, allow connections
+    client.send(b"Sup") -- Send something
+    client.close() -- Close the client
+
+s = socket.socket() -- Make a socket object
+s.bind(("local host", 5000)) -- Bind the socket to an address so it can listen
+s.listen(1) -- Listen for incoming connections
+client, addr = s.accept() -- Accept connections from the client and address
+print("Connected:", addr")
+
+data = client.recv(1024) -- Recieve data from the client
+client.send("Bruh") -- Send something
+client.close() -- Close client
+s.close() -- Close the socket object 
+    
+
 # --
 # Extras
 # --
@@ -235,7 +263,9 @@ def read_demo_file(path="demo.txt"): # Search for the file using a function
         return pathlib.Path(path).read_text() # Search for the file 
     return "No file found."
 
-def run_simple_server(port=8000): # Define a function to start a server
+    
+# HTTP server
+def run_simple_server(port=8000): # Define a function to start an http server
     handler = http.server.SimpleHTTPRequestHandler # Make an HTTP handler. the handler = http.server. makes the variable the server
     with socketserver.TCPServer(("", port), handler) as httpd: # Get the server, port
         print(f"Serving HTTP on port {port} (Ctrl+C to stop)") # Print out the text and port. Use Ctrl+C to stop
@@ -255,7 +285,7 @@ Tokens are these NUMBER, PLUS, MINUS strings
 from typing import List, Tuple, Union
 # Import these
 
-Token = Tuple[str, str] # (type, lexeme)
+Token = Tuple[str, str] # (type, lexeme) # Defines what Tokens are I think
 
 # Tokenizing
 def tokenize(src: str) -> List[Token]: # Get the tokenizer from the import, and tokenize the source
