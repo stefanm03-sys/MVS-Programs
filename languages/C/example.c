@@ -1,6 +1,18 @@
 // This is a C comment
 #include <stdio.h> // Library import
 
+// Server imports, since C doesn't have a built in library
+#include <stdio.h>  // printf, perror
+#include <stdlib.h> // exit, malloc
+#include <string.h> // memset, strlen
+#include <unistd.h> // read, write, close
+#include <sys/types.h>  // data types for sockets
+#include <sys/socket.h> // socket(), bind(), listen(), accept()
+#include <netinet/in.h> // sockaddr_in, htons()
+#include <arpa/inet.h>  // inet_addr(), inet_ntoa()
+
+
+
 int main(void) { /*
     main() is the entry point of a C program
     int is the return type of main

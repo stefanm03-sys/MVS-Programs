@@ -24,9 +24,11 @@ for i in range(6): # This is a loop that will run 6 times. i is the variable tha
 """
 
 def add_numbers(a, b): # This is a function that takes two parameters, a and b
-    if a is None or b is None:
+    try: # A way to check for errors 
         a = input("Enter the first number, a: ") # This prompts the user to enter the first number and stores it in variable a
         b = input("Enter the second number, b: ") # This prompts the user to enter the second number and stores it in variable b
+    except: # What to run if the previous block fails
+        print("Woops! a or b have no value!")
     a = int(a) # Converts the input to an integer
     b = int(b) # Converts the input to an integer
     print("The sum of the two numbers is: " + str(a + b)) # This prints the sum of a and b
@@ -91,16 +93,16 @@ for creature in animals: # Loop over each animal in said list
 
 #
 
-from enum import Enum # Imports enum, which are basically consistent variables
+from enum import Enum # Imports enum, which are simply unchanging values
 
 class AccessLevel(Enum): # Simple enum example
-    GUEST = 0
+    GUEST = 0 # This enum must be explicitly typed by ITSELF and NOT merged
     USER = 1
     ADMIN = 2
 
-print(AccessLevel.GUEST) # Print the class and said value
+print(AccessLevel.GUEST) # Print the class and said enum
 print(AccessLevel.USER.value) # Print the numeric value assigned 
-print(AccessLevel.USER.name) # Print the variable name
+print(AccessLevel.USER.name) # Print the enum name
 
 #
 

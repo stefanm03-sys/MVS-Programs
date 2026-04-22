@@ -8,6 +8,13 @@ import java.io.Console; // Standard io library
 import javax.swing.JOptionPane; // Something
 import java.util.concurrent.CompletableFuture; // For async-style
 
+// Server
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public class practice { // This is a class named "practice"
     public static void main(String[] args) { // This is the main method, which is the entry point of the program
         /* 
@@ -50,8 +57,8 @@ public class practice { // This is a class named "practice"
             pet.speak(); // Calls the overridden version on each object through another method
         }
 
-        // Enum demo
-        Day today = Day.MONDAY; // Access an enum value
+        // Enums
+        Day today = Day.MONDAY; // Access an enum value, explicitly typed
         System.out.println("Today is: " + today);
 
         
@@ -107,7 +114,14 @@ public class practice { // This is a class named "practice"
          );
          
          String message = reader.readLine(); // Read the stream after
-         
+
+         OutputStream out = client.getOutputStream(); // Do this to send data as well
+         out.write("You can do it".getBytes()); // Use bytes to send data
+
+         InputStream in = client.getInputStream(); // Same as previous sentence
+         in.read(buffer); // Read data
+
+
          PrintWriter writer = new PrintWriter(out, true); // Write bytes to the console
          writer.println("Java!"); // Write something
          
@@ -140,6 +154,6 @@ class Cat extends Animal { // Cat is also a subclass
 }
 
 
-enum Day { // This enum holds values, but they may not have any assignments
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
+enum Day { // This enum holds values, but they do not have any assignments
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY; // These are explicitly typed individually and WITH NO assignments
 }
